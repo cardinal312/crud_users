@@ -11,11 +11,10 @@ import (
 	"gorm.io/gorm"
 )
 
-// MARK: - DATA BASE
+// DATA BASE ...
 var db *gorm.DB
 
 func initDB() {
-	// PostgreSQL connection string
 	dsn := "host=postgres user=user password=qwerty dbname=postgres port=5432 sslmode=disable"
 	var err error
 	db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
@@ -27,7 +26,7 @@ func initDB() {
 	db.AutoMigrate(&models.User{})
 }
 
-// MARK: - MAIN
+// MARK ...
 func main() {
 
 	initDB()
@@ -35,11 +34,11 @@ func main() {
 
 	e.POST("/users", handlers.CreateUser(db))
 	e.GET("/users", handlers.GetAllUsers(db))
-	e.GET("/user/:id", handlers.GetUser(db))
+	e.GET("/user/:id", handlers.GetUserById(db))
 	e.PATCH("/user/:id", handlers.EditUser(db))
 	e.DELETE("/user/:id", handlers.DeleteUser(db))
 
-	// Start server
+	// Start server ...
 	e.Logger.Fatal(e.Start(":9090"))
-	fmt.Println("Server started at :9090...🙌🏻🔥")
+	fmt.Println("Server started at localhost:9090...🙌🏻🔥")
 }

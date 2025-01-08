@@ -9,7 +9,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// MARK: - Create User
+// CreateUser ...
 func CreateUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		// Create user
@@ -19,21 +19,25 @@ func CreateUser(db *gorm.DB) echo.HandlerFunc {
 		if err := c.Bind(&user); err != nil {
 			return c.JSON(http.StatusBadRequest, models.Response{
 				Status:  "Error",
-				Message: "Could not add the user",
+				Message: "Could not add the user 1",
 			})
+		}
+
+		if error := user.Validate(); error != nil {
+			return error
 		}
 
 		if err := db.Create(&user).Error; err != nil {
 			return c.JSON(http.StatusBadRequest, models.Response{
 				Status:  "Error",
-				Message: "Could not create the user",
+				Message: "This user registed in db before",
 			})
 		}
 		return c.JSON(http.StatusCreated, &user)
 	}
 }
 
-// MARK: - Get All Users
+// GetAllUsers ...
 func GetAllUsers(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 
@@ -49,8 +53,8 @@ func GetAllUsers(db *gorm.DB) echo.HandlerFunc {
 	}
 }
 
-// MARK: - Get User by ID
-func GetUser(db *gorm.DB) echo.HandlerFunc {
+// GetUser ...
+func GetUserById(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 
 		id := c.Param("id")
@@ -65,7 +69,7 @@ func GetUser(db *gorm.DB) echo.HandlerFunc {
 	}
 }
 
-// MARK: - Edit User by ID
+// EditUser ...
 func EditUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 
@@ -95,7 +99,7 @@ func EditUser(db *gorm.DB) echo.HandlerFunc {
 	}
 }
 
-// MARK: - Delete User by ID
+// DeleteUser ...
 func DeleteUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 
