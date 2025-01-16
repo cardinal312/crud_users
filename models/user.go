@@ -24,7 +24,7 @@ type Response struct {
 // Validate 
 func (u *User) Validate() error {
 	return validation.ValidateStruct(u,
-		validation.Field(&u.ID, validation.Required),
+		//validation.Field(&u.ID, validation.Required),
 		validation.Field(&u.Firstname, validation.Required, validation.Length(1, 50)),
 		validation.Field(&u.Lastname, validation.Required, validation.Length(1, 50)),
 		validation.Field(&u.Email, validation.Required, is.Email))

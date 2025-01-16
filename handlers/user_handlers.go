@@ -14,12 +14,14 @@ func CreateUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
 		// Create user
 		var user models.User
-		user.Created = time.Now()
+		currentTime := time.Now()
+		currentTime.Format("2006-01-02 15:04:05")
+		user.Created = currentTime
 
 		if err := c.Bind(&user); err != nil {
 			return c.JSON(http.StatusBadRequest, models.Response{
 				Status:  "Error",
-				Message: "Could not add the user 1",
+				Message: "Could not add the user",
 			})
 		}
 
