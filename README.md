@@ -1,10 +1,10 @@
-<img width="394" alt="Снимок экрана 2025-01-17 в 06 36 55" src="https://github.com/user-attachments/assets/e543774e-4cb2-4623-879a-8f336fd3dc09" /># Мини веб-приложение на Go
+# Мини веб-приложение на Go
 
 Это простое веб-приложение на языке Go, которое предоставляет несколько API-эндпоинтов для работы с данными.
 
 Технологии:
 - Go (Golang)
-- Postgres (SQL DATA BASE)
+- Postgres (SQL db)
 - Docker-compose
 
 # Описание
