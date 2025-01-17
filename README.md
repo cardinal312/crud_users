@@ -25,10 +25,11 @@ DELETE localhost:9090/user{id} - Удалить пользователя по ID
 Склонируйте этот репозиторий через терминал командой ниже:
 
 ```bash
-git clone https://github.com/yourusername/my-go-web-app.git
+git clone https://github.com/cardinal312/crud_users.git
 ```
 
 Запустите приложение в терминале с помошью Makefile:
+
 --> make <<--
 
 # Пример запроса JSON:
