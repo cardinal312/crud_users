@@ -21,7 +21,7 @@ type Response struct {
 	Message string `json:"message"`
 }
 
-// Validate 
+// Validate
 func (u *User) Validate() error {
 	return validation.ValidateStruct(u,
 		//validation.Field(&u.ID, validation.Required),
