@@ -3,7 +3,7 @@ package models_test
 import (
 	"testing"
 
-	"github.com/cardinal312/crud_users/models"
+	"github.com/cardinal312/crud_users/internal/app/models"
 	"github.com/stretchr/testify/assert"
 )
 

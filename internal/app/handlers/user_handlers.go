@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/cardinal312/crud_users/models"
+	"github.com/cardinal312/crud_users/internal/app/models"
 	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
 )

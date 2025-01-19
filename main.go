@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/cardinal312/crud_users/handlers"
-	"github.com/cardinal312/crud_users/models"
+	"github.com/cardinal312/crud_users/internal/app/handlers"
+	"github.com/cardinal312/crud_users/internal/app/models"
 	"github.com/labstack/echo/v4"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
