@@ -28,9 +28,7 @@ DELETE localhost:9090/user{id} - Удалить пользователя по ID
 git clone https://github.com/cardinal312/crud_users.git
 ```
 
-Запустите приложение в терминале с помошью Makefile:
-
---> make <<--
+Запустите приложение в терминале с помошью команды --> make <<--
 
 # Пример запроса JSON:
 
